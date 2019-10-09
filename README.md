@@ -2,7 +2,7 @@
 
 GrpcRequiredAnnotator is a annotator for null validation of gRPC requests using `required`.
 
-### supported type
+### Supported Types
 
 - Integer (int64, int32, etc...)
 - String (string)
@@ -10,7 +10,7 @@ GrpcRequiredAnnotator is a annotator for null validation of gRPC requests using 
 - Array (repeated fields)
 - Symbol (enum)
 
-### unsupported type
+### Unsupported Types
 
 - oneof
 - embedded messages
