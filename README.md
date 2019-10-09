@@ -1,4 +1,4 @@
-# GrpcRequiredAnnotator
+# GrpcRequiredAnnotator [![Gem Version](https://badge.fury.io/rb/grpc_required_annotator.svg)](https://badge.fury.io/rb/grpc_required_annotator) [![Build Status](https://travis-ci.com/euglena1215/grpc_required_annotator.svg?branch=master)](https://travis-ci.com/euglena1215/grpc_required_annotator)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/grpc_required_annotator`. To experiment with that code, run `bin/console` for an interactive prompt.
 
