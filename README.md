@@ -1,4 +1,4 @@
-# GrpcRequiredAnnotator [![Gem Version](https://badge.fury.io/rb/grpc_required_annotator.svg)](https://badge.fury.io/rb/grpc_required_annotator) [![Build Status](https://travis-ci.com/euglena1215/grpc_required_annotator.svg?branch=master)](https://travis-ci.com/euglena1215/grpc_required_annotator)
+# GrpcRequiredAnnotator [![Gem Version](https://badge.fury.io/rb/grpc_required_annotator.svg)](https://badge.fury.io/rb/grpc_required_annotator) [![Build Status](https://travis-ci.com/euglena1215/grpc_required_annotator.svg?branch=master)](https://travis-ci.com/euglena1215/grpc_required_annotator) [![codecov](https://codecov.io/gh/euglena1215/grpc_required_annotator/branch/master/graph/badge.svg)](https://codecov.io/gh/euglena1215/grpc_required_annotator)
 
 GrpcRequiredAnnotator is a annotator for null validation of gRPC requests using `required`.
 

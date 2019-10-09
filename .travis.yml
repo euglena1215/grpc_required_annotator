@@ -2,6 +2,10 @@
 sudo: false
 language: ruby
 cache: bundler
+env:
+  global:
+    # CODECOV_TOKEN
+    - secure: "P2TGqdOBYoDwwI/WxfwNOt9ITRVx0/nx6BBq3TX+oJ4I7L7FLj4CDp96OnrqpvyRScEAnWIW6K9vr4yv2wvXGsCRAVvauFJz2nLi3ZMCR8vHMLh64jINhfqIbJ1tRvtNy7DvyXNJDYQqUAWjo5ZbcuM+oYq9f8mfzquee5YzYLWhf96r3xsWEbJ3YVJyVNQoA7m35Mhqned9pESjIm2P0nZRF9C+6/lAPbsphEnnpBakz9k3wy7ALJ9wGfKpoUJ6DjtraoCRxPrWmg0pCOzVbATOVFWaKT7xcqJIeYSE7Q6aaLakrccfbPMumWUqU1sie5cT0WOhRdsiEEoS7xelRSmfnkmtz9EYB7xCRNB7X/AeqeH+YXUsWMoFiqs/oLUezay6AINBUgpSRACn14xx6lmbo4JKRYOLMW3/DcrV0aZzkSh5ARZA4VrmaGVxaR6a/jeZtpVvqfUHI5grkiM5wfVT/QoeWfYGH15AUp+g5l521BRfV+mf4mJVv2ShYgcrRX714D6p280xmcASy7TzxSftDXo47rZaFeHUm83HtGkBnSZphyjtizR5PXdb54MZHedjqiOeo9HH7MA4cSYZRN7dqSl2LbDjmnVEESREIou/YyR9WbmxGkod/JHMEcamNCInwcby/Pi/2hgVaLwFgMgQbWQpUYv+Ofs16t/IMk4="
 rvm:
   - 2.6.3
 before_install: gem install bundler -v 2.0.2
