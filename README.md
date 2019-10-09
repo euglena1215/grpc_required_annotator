@@ -1,8 +1,19 @@
 # GrpcRequiredAnnotator [![Gem Version](https://badge.fury.io/rb/grpc_required_annotator.svg)](https://badge.fury.io/rb/grpc_required_annotator) [![Build Status](https://travis-ci.com/euglena1215/grpc_required_annotator.svg?branch=master)](https://travis-ci.com/euglena1215/grpc_required_annotator)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/grpc_required_annotator`. To experiment with that code, run `bin/console` for an interactive prompt.
+GrpcRequiredAnnotator is a annotator for null validation of gRPC requests using `required`.
 
-TODO: Delete this and the text above, and describe your gem
+### supported type
+
+- Integer (int64, int32, etc...)
+- String (string)
+- Google::Protobuf::FieldMask (field_mask)
+- Array (repeated fields)
+- Symbol (enum)
+
+### unsupported type
+
+- oneof
+- embedded messages
 
 ## Installation
 
@@ -22,7 +33,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```proto
+syntax = "proto3";
+package sample;
+
+option ruby_package = "SamplePb";
+
+service Sample {
+    rpc Foo (FooRequest) returns (FooResponse);
+}
+
+message FooRequest {
+    int64 a = 1;
+    string b = 2;
+}
+
+message FooResponse {
+    int64 a = 1;
+    string b = 2;
+}
+```
+
+```rb
+class SampleService < SamplePb::Sample::Service
+  include GrpcRequiredAnnotator
+
+  # If a or b are null, raises GRPC::InvalidArgument
+  required :a, :b
+  def foo(request, call)
+    ## `required :a, :b` is equivalent to the following:
+    # raise GRPC::InvalidArgument.new("`a` is required") if req.a == 0
+    # raise GRPC::InvalidArgument.new("`b` is required") if req.b == ""
+    FooResponse.new(a: req.a, b: req.b)
+  end
+end
+```
 
 ## Development
 
