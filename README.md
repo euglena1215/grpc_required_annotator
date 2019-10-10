@@ -69,6 +69,21 @@ class SampleService < SamplePb::Sample::Service
 end
 ```
 
+### Testing by rspec
+
+```rb
+RSpec.describe SampleService do
+  describe "#foo" do
+    describe "required" do
+      it "a and b are required" do
+        expect(described_class.required_fields(:foo)).to eq [:a, :b]
+      end
+    end
+  end
+end
+
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
