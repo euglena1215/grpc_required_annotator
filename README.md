@@ -7,7 +7,7 @@ GrpcRequiredAnnotator is a annotator for null validation of gRPC requests using 
 - Integer (int64, int32, etc...)
 - String (string)
 - Google::Protobuf::FieldMask (field_mask)
-- Array (repeated fields)
+- Google::Protobuf::RepeatedField (repeated fields)
 - Symbol (enum)
 
 ### Unsupported Types

@@ -26,7 +26,7 @@ module GrpcRequiredAnnotator
           raise GRPC::InvalidArgument.new("`#{field}` is required") if value == ""
         when Google::Protobuf::FieldMask
           raise GRPC::InvalidArgument.new("`#{field}` is required") if value.paths.empty?
-        when Array
+        when Google::Protobuf::RepeatedField
           raise GRPC::InvalidArgument.new("`#{field}` is required") if value.empty?
         when Symbol
           raise GRPC::InvalidArgument.new("`#{field}` is required") if value.to_s.include?("UNSPECIFIED") # https://developers.google.com/protocol-buffers/docs/style#enums

@@ -82,10 +82,10 @@ RSpec.describe GrpcRequiredAnnotator::Required do
         end
       end
 
-      context "when field is array" do
+      context "when field is repeated field" do
         context "when field is empty" do
           before {
-            allow(request).to receive(:a).and_return([])
+            allow(request).to receive(:a).and_return(Google::Protobuf::RepeatedField.new(:int64, []))
           }
 
           it "raises GRPC::InvalidArgument" do
@@ -95,7 +95,7 @@ RSpec.describe GrpcRequiredAnnotator::Required do
 
         context "when field is present" do
           before {
-            allow(request).to receive(:a).and_return(['value'])
+            allow(request).to receive(:a).and_return(Google::Protobuf::RepeatedField.new(:int64, [1]))
           }
 
           it "passes" do
