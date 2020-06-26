@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Bump up rake gem
+
 ## 0.1.2
 
 - Fix repeated field validation
